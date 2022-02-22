@@ -16,7 +16,10 @@ $_numberOfReviewsWithRating = 0;
   "sku": "<?php echo $this->cleanString($_product->getSku()) ?>",
   "url": "<?php echo $_product->getProductUrl() ?>",
   <?php if ($_product->getData('manufacturer')) : ?>
-  "brand": "<?php echo $this->cleanString($_product->getAttributeText('manufacturer')) ?>",
+  "brand": {
+    "@type": "Brand",
+    "name": "<?php echo $this->cleanString($_product->getAttributeText('manufacturer')) ?>"
+  },
   <?php endif ?>
   "offers": [
     <?php if($_product->getTypeId() === 'bundle') : ?>
