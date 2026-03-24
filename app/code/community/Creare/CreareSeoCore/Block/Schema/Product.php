@@ -6,7 +6,7 @@ class Creare_CreareSeoCore_Block_Schema_Product extends Mage_Catalog_Block_Produ
 
     public function cleanString($string)
     {
-        $cleanString = strip_tags($string);
+        $cleanString = strip_tags($string ?? '');
         $cleanString = trim($cleanString);
         // addcslashes does NOT handle \n, so that we need to escape it ourselves
         $cleanString = str_replace(array("\r\n", "\n"), array("\n", "\\n"), $cleanString);
